@@ -29,3 +29,40 @@ h1 {
   font-size: 28px;
   margin-bottom: 20px;
 }
+
+.contenedor_completadas {
+  display: inline-flex;
+  align-items: center;
+  background-color: #c5c1cf;
+  padding: 8px 16px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #000000;
+}
+
+.contenedor_completadas span {
+  color: #7e0a9e;
+  font-weight: bold;
+  margin: 0 3px;
+}
+
+#contenedor_form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid #94c5f6;
+  margin-bottom: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  color: #000000;
+}
+input::placeholder{
+  color: #000000;
+}
+
