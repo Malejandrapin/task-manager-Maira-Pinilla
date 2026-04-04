@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Organizador de Tareas</title>
+</head>
+
+<body>
+    <div id="container_principal">
+        <h1>Task Manager</h1>
+        <div id="contenedor_completadas">
+            <p> <span id="cantidadCompletadas">0</span> de
+                <span id="totalTareas">0</span> tareas completadas
+            </p>
+        </div>
+        <div id="contenedor_form">
+            <input type="text" id="input_tarea" placeholder="Escribe una tarea...">
+
+            <select name="tarea" id="selectTarea">
+                <option value=""> ---Categoria---</option>
+                <option value="Trabajo">💼 Trabajo</option>
+                <option value="Estudio">📚 Estudio</option>
+                <option value="Personal">🏠 Personal</option>
+                <option value="Urgente">🛑 Urgente</option>
+                <option value="Otra">➕ Otra, ¿cuál? </option>
+            </select>
+            <input type="text" id="otraCategoria" placeholder="Escribe la categoria" style="display: none;">
+            <button id="btnAgregarTarea">+ Agregar tarea </button>
+        </div>
+        <ul id="listaTaeas"></ul>
+        <button id="btnlimpiarCompletadas" class="btnLimpiar">🧹Limpiar tareas realizadas</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

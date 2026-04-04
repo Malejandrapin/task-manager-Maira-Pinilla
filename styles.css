@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fondo general */
+body {
+  background-color: #94c5f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  min-height: 100vh;
+}
+
+#container_principal {
+  background-color: #d0e0f0;
+  max-width: 600pc;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px #323131;
+  margin: 20px auto;
+}
+
+h1 {
+  color: #2A1E5C;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
