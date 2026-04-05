@@ -54,7 +54,7 @@ h1 {
 input[type="text"],
 select {
   width: 100%;
-  padding: 6px;
+  padding:10px;
   border-radius: 8px;
   border: 2px solid #94c5f6;
   margin-bottom: 8px;
@@ -62,7 +62,29 @@ select {
   font-size: 16px;
   color: #000000;
 }
-input::placeholder{
+
+input::placeholder {
   color: #000000;
 }
 
+/* Al darle clic en los input cambia de color, diseño interactivo mejorando usabilidad y accesibilidad */
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #2A1E5C;
+}
+
+#btnAgregarTarea {
+  width: 100%;
+  padding: 16px;
+  background-color:#7e0a9e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+#btnAgregarTarea:hover{
+  background-color:#7A3FFF;
+}

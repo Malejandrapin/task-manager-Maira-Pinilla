@@ -18,7 +18,6 @@
         </div>
         <div id="contenedor_form">
             <input type="text" id="input_tarea" placeholder="Escribe una tarea...">
-            <!-- <div id="mensajeError">⚠️Debes agregar una tarea</div> -->
             <select name="tarea" id="selectTarea">
                 <option value=""> ---Categoria---</option>
                 <option value="Trabajo">💼 Trabajo</option>
@@ -28,6 +27,7 @@
                 <option value="Otra">➕ Otra, ¿cuál? </option>
             </select>
             <input type="text" id="otraCategoria" placeholder="Escribe la categoria" style="display: none;">
+            <div id="mensajeError" style="display:none;">⚠️Debes agregar una tarea</div>
             <button id="btnAgregarTarea">+ Agregar tarea </button>
         </div>
         <ul id="listaTaeas"></ul>
