@@ -41,16 +41,29 @@ document.getElementById('btnAgregarTarea').addEventListener('click', () => {
         errorMensaje.style.display = "block";
         return;
     }
+    const emojis = {
+        "Trabajo": "💼",
+        "Estudio": "📚",
+        "Personal": "🏠",
+        "Urgente": "🔴"
+    };
+
+    let categoriaFinal = "";
     errorMensaje.style.display = "none";
     errorMensaje.innerHTML = "⚠️Debes agregar una tarea";
     // Valida si el usuario selecciono "Otra categoria" y dejo el input en blanco, usar por defecto Otra
     if (categoria === "Otra") {
-        const defectoCategoria = otraCategoria.value.trim(); categoria = defectoCategoria ? "🏷️ " + defectoCategoria : "🏷️ Otra";
+        const defectoCategoria = otraCategoria.value.trim();
+        categoriaFinal = "🏷️ " + (defectoCategoria || "Otra");
+    } else {
+        // Se busca el emoji en el objeto y se une al nombre
+        const emoji = emojis[categoria] || "📝";
+        categoriaFinal = `${emoji} ${categoria}`;
     }
 
     tareas.push({
         texto: texto,
-        categoria: categoria,
+        categoria: categoriaFinal,
         done: false,
         urgent: false
     });
@@ -69,7 +82,7 @@ function renderizarTareas() {
     tareas.forEach((tarea, index) => {
         //crea un elemento tipo lista en memoria
         const li = document.createElement('li');
-        li.className = `tarjetaTarea ${tarea.done ? 'is-done' : ''} ${tarea.urgent ? 'is-urgent' : ''} `;
+        li.className = `tarjetaTarea ${tarea.done ? 'estaHecho' : ''} ${tarea.urgent ? 'esUrgente' : ''} `;
         //Extraemos el emoji y el texto de la categoria
         let categoriaDis = tarea.categoria;
         if (tarea.categoria.includes(' ')) {
@@ -99,8 +112,29 @@ function renderizarTareas() {
 window.marcarHecha = (index) => {
     tareas[index].done = !tareas[index].done;
     renderizarTareas();
+    console.log("Marcada Hecha");
+
 }
 window.marcarUrgente = (index) => {
     tareas[index].urgent = !tareas[index].urgent;
     renderizarTareas();
+    console.log("Marcada urgente");
+
 }
+window.eliminarTarea = (index) => {
+    if (confirm("¿Estas seguro de que deseas eliminar está tarea?")) {
+        tareas.splice(index, 1);
+        renderizarTareas();
+    }
+    console.log("Eliminada");
+}
+window.limpiarCompletadas = () => {
+    const tareasCompletas = tareas.filter(t => t.done);
+    if (tareasCompletas.length === 0) return alert`No hay tareas realizadas`;
+    ;
+
+    if (confirm(`Se eliminaran ${tareasCompletas.length} tareas completadas. ¿Continuar?`)) {
+        tareas = tareas.filter(t => !t.done);
+        renderizarTareas();
+    }
+};
