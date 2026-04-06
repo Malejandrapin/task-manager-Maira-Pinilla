@@ -18,19 +18,19 @@
         </div>
         <div id="contenedor_form">
             <input type="text" id="input_tarea" placeholder="Escribe una tarea...">
-            <select name="tarea" id="selectTarea">
+            <select name="tarea" id="selectTarea" onchange="selectOtraCategoria()">
                 <option value=""> ---Categoria---</option>
-                <option value="Trabajo">💼 Trabajo</option>
-                <option value="Estudio">📚 Estudio</option>
-                <option value="Personal">🏠 Personal</option>
-                <option value="Urgente">🛑 Urgente</option>
-                <option value="Otra">➕ Otra, ¿cuál? </option>
+                <option value="Trabajo">💼Trabajo</option>
+                <option value="Estudio">📚Estudio</option>
+                <option value="Personal">🏠Personal</option>
+                <option value="Urgente">🛑Urgente</option>
+                <option value="Otra">➕Otra, ¿cuál? </option>
             </select>
             <input type="text" id="otraCategoria" placeholder="Escribe la categoria" style="display: none;">
             <div id="mensajeError" style="display:none;">⚠️Debes agregar una tarea</div>
             <button id="btnAgregarTarea">+ Agregar tarea </button>
         </div>
-        <ul id="listaTaeas"></ul>
+        <ul id="listaTareas"></ul>
         <button id="btnlimpiarCompletadas" class="btnLimpiar">🧹Limpiar tareas realizadas</button>
     </div>
     <script src="app.js"></script>
